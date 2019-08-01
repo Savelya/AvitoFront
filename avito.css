@@ -1,0 +1,224 @@
+/*Стиль общего блока body для расположения меню и блока контента*/
+body {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	
+	font: 13px/1.5 Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+/*Стили для левого меню*/
+.menu {
+	display: flex;
+	flex-direction: column;
+	position: sticky;
+
+	top: 10px;
+	background: #F8F8FF;
+	padding: 10px;
+}
+
+/*Стили для верхней полосы меню*/
+
+#filter {
+	display: flex;
+
+	background: #00BFFF;
+	border-radius: 2px;
+	
+	margin-bottom: 5px;
+}
+
+#low-price, #high-price, select {
+	border: none;
+	border-radius: 2px;
+	
+	padding: 5px 0px;
+	margin: 3px 0px 3px 3px;
+}
+
+#low-price, #high-price {
+	padding-left: 3px;
+}
+
+select {
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+/*Стили для кнопок*/
+button {
+	border: none;
+	font: 13px/1.5 Arial,'Helvetica Neue',Helvetica,sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+
+	background: #00BFFF;
+	border-radius: 5px;
+	box-shadow: 0 -3px #1E90FF inset;
+
+	padding: .8em 1em calc(.8em + 3px);
+	margin: 5px 0px;
+
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+button:hover {
+	background: #1E90FF;
+}
+
+button:active {
+	background: #4169E1;
+  	box-shadow: 0 -3px #4169E1 inset;
+}
+
+/*Стиль блока всех продуктов*/
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*Стили для блока продукта*/
+.product {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+
+	background: #F8F8FF;
+
+	width: 700px;
+	padding: 5px;
+	margin: 2px;
+}
+
+/*Стили для левой фотографии продукта*/
+.product-photo {
+	position: relative;
+
+	border: 1px solid #C0C0C0;
+
+	height: 200px;
+	width: 200px;
+}
+
+/*Стили для выведения числа дополнительных фотографий при наведении на главное фото*/
+.product-photo p {
+	position: absolute;
+
+	top: 0;
+	width: 100%;
+
+	font-size: 100px;
+	text-align: center;
+	line-height: 200px;	
+	color: white;
+		
+	margin: 0;
+
+	opacity: 0;
+}
+
+.product-photo:hover p {
+	background: rgba(0,0,0,0.5);
+	cursor: pointer;
+	
+	opacity: 1;
+
+	transition: .3s;
+}
+
+/*Стиль для правой информации о продукте*/
+.product-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	padding: 10px;
+}
+
+
+/*Стили для заголовка продукта*/
+.product-title {
+	color: #00BFFF;
+
+	font-weight: bold;
+	font-size: 150%;
+
+	margin: 0px;
+}
+
+/*Смена цвета при наведении на заголовок*/
+.product-title:hover {
+	color: #DC143C;
+	cursor: pointer;
+	transition: .1s;
+}
+
+/*Стиль цены продукста*/
+.product-price {
+	font-weight: bold;
+	font-size: 120%;
+
+	background: #00BFFF;
+	color: #FFFFFF;
+
+	padding: 0px 3px;
+}
+
+/*Стиль блока информации о продавце*/
+.product-seller {
+	margin-bottom: 5px; 
+}
+
+.product-favorite input:checked ~ label, .product-favorite label,
+.product-favorite label:hover, .product-favorite label:hover ~ label {
+	background: url(images/star.png) no-repeat;
+	margin-top: 10px;
+}
+
+.product-favorite {
+	overflow: hidden;
+	*zoom: 1;
+
+	position: relative;
+	right: 0;
+}
+
+.product-favorite input {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+
+	width: 43px;
+	height: 40px;
+
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+
+.product-favorite input:checked ~ label {
+	height: 40px;
+	width: 43px;
+	background-position: 0 100%;
+}
+
+.product-favorite label {
+	
+	height: 40px;
+	width: 43px;
+	background-position: 0 0;
+	float: right;
+	cursor: pointer;
+	margin-right: 10px;
+
+	position: relative;
+	z-index: 1;
+}
+
+.product-favorite label:hover, .product-favorite label:hover ~ label {
+	background-position: 0 100%;
+	height: 40px;
+	width: 43px;
+}

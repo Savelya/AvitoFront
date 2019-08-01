@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="avito.js"></script>
+	<link href="avito.css" rel="stylesheet">
+</head>
+<body>
+	<div class='menu'>
+
+		<div id='filter'>
+
+			<input type="number" min='0' max='2000000' id="low-price" value="0">
+			<input type="number" min='0' max='2000000' id="high-price" value="1966907">
+			<select id="category">
+				<option value="">Все категории</option>
+				<option value="immovable">Недвижимость</option>
+				<option value="cameras">Фотоаппараты</option>
+				<option value="auto">Автомобили</option>
+				<option value="laptops">Ноутбуки</option>
+			</select>
+
+		</div>
+
+		<button type="button" onclick="filterProducts()">Применить фильтр</button>
+		<button type="button" id="sort-price" value="0" onclick="sortPrice(value)">Сортировать по возрастанию цены</button>
+		<button type="button" id="sort-popular" onclick="sortPopular(value)">Сортировать по популярности</button>
+		<button type="button" onclick="filterFavorite()">Избранные</button>
+		<!-- Кнопка для сброса фильтров и получения новых товаров с API -->
+		<button type="button" onclick="getProductAvito()">Обновить товары</button>
+
+	</div>
+
+	<div class='content'>
+		
+	</div>
+	
+</body>
+</html>
